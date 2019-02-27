@@ -3,17 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://emreerinc.github.io/linux-kernel-modul-setup-and-remove/</loc>
+    <loc>https://emreerinc.github.io/about/</loc>
+    <lastmod>2019-01-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://emreerinc.github.io/showcase/</loc>
+    <lastmod>2019-01-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://emreerinc.github.io/posts/linux-kernel-modul-setup-and-remove/</loc>
     <lastmod>2018-10-27T23:06:15+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://emreerinc.github.io/linux-kernel-upgrade-2/</loc>
+    <loc>https://emreerinc.github.io/posts/linux-kernel-upgrade-2/</loc>
     <lastmod>2018-10-07T23:06:15+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://emreerinc.github.io/linux-kernel-upgrade-1/</loc>
+    <loc>https://emreerinc.github.io/posts/linux-kernel-upgrade-1/</loc>
     <lastmod>2018-10-07T23:06:15+03:00</lastmod>
   </url>
   
@@ -23,13 +33,19 @@
   </url>
   
   <url>
-    <loc>https://emreerinc.github.io/</loc>
+    <loc>https://emreerinc.github.io/posts/</loc>
     <lastmod>2018-10-27T23:06:15+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://emreerinc.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://emreerinc.github.io/</loc>
+    <lastmod>2019-01-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

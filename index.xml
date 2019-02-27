@@ -1,41 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts</title>
+    <title>emre erinç</title>
     <link>https://emreerinc.github.io/</link>
-    <description>Recent content on Posts</description>
+    <description>Recent content on emre erinç</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 27 Oct 2018 23:06:15 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 18 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://emreerinc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About</title>
+      <link>https://emreerinc.github.io/about/</link>
+      <pubDate>Fri, 18 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://emreerinc.github.io/about/</guid>
+      <description> Emre Erinç </description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>https://emreerinc.github.io/showcase/</link>
+      <pubDate>Fri, 18 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://emreerinc.github.io/showcase/</guid>
+      <description>Header 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. Donec quis dolor nec nunc mollis interdum vel in purus. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.</description>
+    </item>
+    
+    <item>
       <title>Linux Kernel Module Setup and Remove</title>
-      <link>https://emreerinc.github.io/linux-kernel-modul-setup-and-remove/</link>
+      <link>https://emreerinc.github.io/posts/linux-kernel-modul-setup-and-remove/</link>
       <pubDate>Sat, 27 Oct 2018 23:06:15 +0300</pubDate>
       
-      <guid>https://emreerinc.github.io/linux-kernel-modul-setup-and-remove/</guid>
+      <guid>https://emreerinc.github.io/posts/linux-kernel-modul-setup-and-remove/</guid>
       <description>Linux Kernel Module Setup and Remove Önce kurulumunu gerçekleştireceğimiz modülü masaüstüne indiriyoruz. Ardından işlemler sonucunda oluşacak dosyaların bir arada durması için mkdir kernel-module ile klasörü oluşturuyoruz. Klasörün içine girdikten sonra kernel işlemlerin kullanmak üzere pico Makefile ile Makefile dosyamızı oluşturuyoruz.
 GNU nano açıldıktan sonra gerekli komutları yazıyoruz. Fakat bu noktada dikkat edilmesi gereken hususlar var. Öncelikle derlemesini yapacağımız dosya adı ile aynı adı taşıyacak dosya adını ekliyoruz, dosya adı uzantısının “.</description>
     </item>
     
     <item>
       <title>Linux Kernel Install and Upgrade (Kernel Install)</title>
-      <link>https://emreerinc.github.io/linux-kernel-upgrade-2/</link>
+      <link>https://emreerinc.github.io/posts/linux-kernel-upgrade-2/</link>
       <pubDate>Sun, 07 Oct 2018 23:06:15 +0300</pubDate>
       
-      <guid>https://emreerinc.github.io/linux-kernel-upgrade-2/</guid>
+      <guid>https://emreerinc.github.io/posts/linux-kernel-upgrade-2/</guid>
       <description>Linux Kernel Install and Upgrade - 2 Kernel Kurulumu ve Upgrade İlk adımda Virtual Box üzerine Ubuntu kurulumunu yapmıştık sıra Kernel i makinemize kurmaya geldi
 Önce makinede kurulu olan kernel sürümünü uname -r komutu ile öğreniyoruz. İndirdiğimiz kernel dosyasını /usr/src altına taşıyoruz. Normal kullanıcı olarak denediğimiz için erişim hatası aldık. sudo komutunu satır başına ekleyerek isteği tekrarlıyoruz. Bu sefer gerekli izin için bizden şifre talep ediyor. Şifreyi girdikten işlemin gerçekleştiğine dair diğer komut alma satırı geliyor.</description>
     </item>
     
     <item>
       <title>Linux Kernel Install and Upgrade (VBox ve Ubuntu Install)</title>
-      <link>https://emreerinc.github.io/linux-kernel-upgrade-1/</link>
+      <link>https://emreerinc.github.io/posts/linux-kernel-upgrade-1/</link>
       <pubDate>Sun, 07 Oct 2018 23:06:15 +0300</pubDate>
       
-      <guid>https://emreerinc.github.io/linux-kernel-upgrade-1/</guid>
+      <guid>https://emreerinc.github.io/posts/linux-kernel-upgrade-1/</guid>
       <description>Linux Kernel Install and Upgrade - 1 Virtual Box Üzerine Ubuntu Kurulumu ve Kerneli İndirme İndirme Bağlantıları:
 VirtualBox: https://www.virtualbox.org/wiki/Downloads
 Ubuntu: https://www.ubuntu.com/download
