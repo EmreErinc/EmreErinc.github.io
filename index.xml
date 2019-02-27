@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bgog</title>
+    <title>Posts</title>
     <link>https://emreerinc.github.io/</link>
-    <description>Recent content on Bgog</description>
+    <description>Recent content on Posts</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 27 Oct 2018 23:06:15 +0300</lastBuildDate>
     
 	<atom:link href="https://emreerinc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux Kernel Module Setup and Remove</title>
+      <link>https://emreerinc.github.io/linux-kernel-modul-setup-and-remove/</link>
+      <pubDate>Sat, 27 Oct 2018 23:06:15 +0300</pubDate>
+      
+      <guid>https://emreerinc.github.io/linux-kernel-modul-setup-and-remove/</guid>
+      <description>Linux Kernel Module Setup and Remove Önce kurulumunu gerçekleştireceğimiz modülü masaüstüne indiriyoruz. Ardından işlemler sonucunda oluşacak dosyaların bir arada durması için mkdir kernel-module ile klasörü oluşturuyoruz. Klasörün içine girdikten sonra kernel işlemlerin kullanmak üzere pico Makefile ile Makefile dosyamızı oluşturuyoruz.
+GNU nano açıldıktan sonra gerekli komutları yazıyoruz. Fakat bu noktada dikkat edilmesi gereken hususlar var. Öncelikle derlemesini yapacağımız dosya adı ile aynı adı taşıyacak dosya adını ekliyoruz, dosya adı uzantısının “.</description>
+    </item>
+    
+    <item>
+      <title>Linux Kernel Install and Upgrade (Kernel Install)</title>
+      <link>https://emreerinc.github.io/linux-kernel-upgrade-2/</link>
+      <pubDate>Sun, 07 Oct 2018 23:06:15 +0300</pubDate>
+      
+      <guid>https://emreerinc.github.io/linux-kernel-upgrade-2/</guid>
+      <description>Linux Kernel Install and Upgrade - 2 Kernel Kurulumu ve Upgrade İlk adımda Virtual Box üzerine Ubuntu kurulumunu yapmıştık sıra Kernel i makinemize kurmaya geldi
+Önce makinede kurulu olan kernel sürümünü uname -r komutu ile öğreniyoruz. İndirdiğimiz kernel dosyasını /usr/src altına taşıyoruz. Normal kullanıcı olarak denediğimiz için erişim hatası aldık. sudo komutunu satır başına ekleyerek isteği tekrarlıyoruz. Bu sefer gerekli izin için bizden şifre talep ediyor. Şifreyi girdikten işlemin gerçekleştiğine dair diğer komut alma satırı geliyor.</description>
+    </item>
+    
+    <item>
+      <title>Linux Kernel Install and Upgrade (VBox ve Ubuntu Install)</title>
+      <link>https://emreerinc.github.io/linux-kernel-upgrade-1/</link>
+      <pubDate>Sun, 07 Oct 2018 23:06:15 +0300</pubDate>
+      
+      <guid>https://emreerinc.github.io/linux-kernel-upgrade-1/</guid>
+      <description>Linux Kernel Install and Upgrade - 1 Virtual Box Üzerine Ubuntu Kurulumu ve Kerneli İndirme İndirme Bağlantıları:
+VirtualBox: https://www.virtualbox.org/wiki/Downloads
+Ubuntu: https://www.ubuntu.com/download
+Bu bağlantıları kullanarak gerekli dosyaları indirdikten ve VirtualBox kurulumunu gerçekleştirdikten sonra Ubuntu’yu kurma adımlarına geçebiliriz.
+Makinemize bir ad veriyoruz. Kullanmak istediğimiz RAM miktarını seçiyoruz Kurulum yapacağımız disk türünü seçiyoruz. Ben sanal bir depolamaya kurulum yapmayı tercih ettim. Disk ayarlarına devam ediyoruz. Disk boyutunu seçiyoruz Kurulacak işletim sistemi için gerekli ayarlar yapıldı Kuruluma geçmeden önce biraz daha detay ayarlara bakıyoruz Sanal makineye vereceğimiz çekirdek sayısını seçiyoruz Kurulum için gerekli .</description>
+    </item>
     
   </channel>
 </rss>

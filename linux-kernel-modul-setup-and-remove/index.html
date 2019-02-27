@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Linux Kernel Module Setup and Remove // Posts</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Emre Erinç" />
+    <meta name="description" content="" />
+    <base href="https://emreerinc.github.io" />
+    <link rel="stylesheet" href="https://emreerinc.github.io/css/main.min.3bf813d46763420c83fb33c51950b4fc582483efcfddb34b4e4e8d6b811e3208.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="./avatar.jpg" /></a>
+      <h1>Posts</h1>
+      <p>code better than words</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/EmreErinc"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+        
+          <a target="_blank" href="https://twitter.com/erinc_emre"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Linux Kernel Module Setup and Remove</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          Oct 27, 2018
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          4 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h3 id="linux-kernel-module-setup-and-remove">Linux Kernel Module Setup and Remove</h3>
+
+<p>Önce kurulumunu gerçekleştireceğimiz modülü masaüstüne indiriyoruz. Ardından işlemler sonucunda oluşacak dosyaların bir arada durması için <strong>mkdir kernel-module</strong> ile klasörü oluşturuyoruz. Klasörün içine girdikten sonra kernel işlemlerin kullanmak üzere <strong>pico Makefile</strong> ile Makefile dosyamızı oluşturuyoruz.</p>
+
+<p><img src="img/lk-msr/001.png" alt="_config.yml" /></p>
+
+<p>GNU nano açıldıktan sonra gerekli komutları yazıyoruz. Fakat bu noktada dikkat edilmesi gereken hususlar var. Öncelikle derlemesini yapacağımız dosya adı ile aynı adı taşıyacak dosya adını ekliyoruz, dosya adı uzantısının <strong>“.o”</strong> olarak yazılmasına dikkat ediyoruz yoksa derleme sırasında hatalar oluşabilir. Ek olarak boşluk bırakırken <strong>“boşluk tuşu(space)” tuşu yerine “Tab”</strong> tuşunu kullanıyoruz.</p>
+
+<p><img src="img/lk-msr/002.png" alt="_config.yml" /></p>
+
+<p>Gerekli kodları yazdıktan sonra <strong>Ctrl + X</strong> ile dosya içindeki değişikleri kaydediyoruz.</p>
+
+<p><img src="img/lk-msr/003.png" alt="_config.yml" /></p>
+
+<p>Dosya adını doğrulayıp <strong>Enter</strong> deyip GNU nano dan çıkıyoruz.</p>
+
+<p><img src="img/lk-msr/004.png" alt="_config.yml" /></p>
+
+<p>Sıra indirdiğimiz <strong>Hello.c</strong> dosyamızı işlemleri yapacağımız klasöre taşıyoruz. İndirdiğimiz dosyanın bulunduğu dizin olan masaüstüne <strong>cd ..</strong> komutu ile dönüyoruz. <strong>mv Hello.c kernel-module/</strong> komutu ile taşıma işlemini gerçekleştiriyoruz.</p>
+
+<p><img src="img/lk-msr/005.png" alt="_config.yml" /></p>
+
+<p>Taşıma yaptığımız klasöre gidip kontrol ediyoruz. Ve işlem başarılı.</p>
+
+<p><img src="img/lk-msr/006.png" alt="_config.yml" /></p>
+
+<p>Derleme işlemine başlamadan önce <strong>cat Makefile</strong> komutu ile oluşturduğumuz Makefile dosyası içinde yazdıklarımızı kontrol ediyoruz.</p>
+
+<p><img src="img/lk-msr/007.png" alt="_config.yml" /></p>
+
+<p><strong>cat Hello.c</strong> ile de indirdiğimiz dosya içini kontrol ediyoruz.</p>
+
+<p><img src="img/lk-msr/008.png" alt="_config.yml" /></p>
+
+<p>Derleme işlemine başlamak için ve yetki sorunlarına takılmamak için <strong>sudo make</strong> komutunu kullanıyoruz.</p>
+
+<p><img src="img/lk-msr/009.png" alt="_config.yml" /></p>
+
+<p>Fakat terminal bize kullandığımız boşluklar ile ilgili uyarı veriyor.
+<strong>Çözüm:</strong> <strong>pico Makefile</strong> dosyayı düzenleme moduna geçiyoruz. Tab boşluklarla ilgili bir sıkıntı olmamasına rağmen sorunun sebebini bulmak biraz zaman alıyor. Bunun üzerine dosyayı yazarken kullandığım adımları düşünüp dosyayı baştan yazıyorum. Bu sefer ilk yaptığımdan farklı olarak alt satıra geçmek için <strong>Enter</strong> yerine <strong>“alt yön (↓)” tuşunu</strong> kullanıyorum. Değişiklikleri kaydedip düzenleme modundan çıkıyorum.</p>
+
+<p><img src="img/lk-msr/010.png" alt="_config.yml" /></p>
+
+<p><strong>sudo make</strong> komutunu tekrarlıyoruz. Bu sefer sonuç başarılı.</p>
+
+<p><img src="img/lk-msr/011.png" alt="_config.yml" /></p>
+
+<p>Bulunduğumuz klasörde oluşan dosyaları <strong>ls</strong> komutu kontrol ediyoruz. Derleme ile birlikte yeni dosyalar eklenmiş.</p>
+
+<p><img src="img/lk-msr/012.png" alt="_config.yml" /></p>
+
+<p>Sıra modülün yüklenmesine geldi. İşlem yaptığımız klasörde <strong>insmod Hello.ko</strong> komutu ile c dosyasının derlenmesiyle oluşan ko dosyasını kaynak olarak gösteriyoruz.</p>
+
+<p><img src="img/lk-msr/013.png" alt="_config.yml" /></p>
+
+<p>Yetki ile ilgili sorun yaşadığını söylüyor terminal. <strong>sudo insmod Hello.ko</strong> komutu ile tekrar deniyoruz. Herhangi bir hata veya bilgi gelmedi.</p>
+
+<p><img src="img/lk-msr/014.png" alt="_config.yml" /></p>
+
+<p><strong>lsmod</strong> komutu ile kernelde yüklü modülleri listeliyoruz. Ve en üstte yüklediğimiz <strong>“Hello”</strong> modülünü görüyoruz.</p>
+
+<p><img src="img/lk-msr/015.png" alt="_config.yml" /></p>
+
+<p>Yüklenen modül ile ilgili tam kontrolleri sağlamak için <strong>dmesg</strong> komutu ile kernel üzerinde yayınlanan mesajları görüntülüyoruz.</p>
+
+<p><img src="img/lk-msr/016.png" alt="_config.yml" /></p>
+
+<p>Hello.c içinde yer alan <strong>_init hello_start(void)</strong> içinde alan bilgiler <strong>constructor(yapıcı)</strong> maksadı taşıdığından çalışma durumunda içindeki mesajı ve varsa operasyonları yapmasını bekliyorduk. En altta görüldüğü üzere constructor metodu içindeki mesajları görüntülüyoruz. Bu da modül ekleme işleminin başarılı bir şekilde yapıldığını gösteriyor.</p>
+
+<p><img src="img/lk-msr/017.png" alt="_config.yml" /></p>
+
+<p>Sıra yüklediğimiz modülü kaldırmakta. Yine yetki sorunu olmaması için <strong>sudo rmmod Hello</strong> komutu ile modülü kaldırıyoruz. Yine bir hata veya bilgi mesajı almadık.</p>
+
+<p><img src="img/lk-msr/018.png" alt="_config.yml" /></p>
+
+<p>Yüklü olan modülleri <strong>lsmod</strong> komutu ile kontrol ediyoruz. Listede <strong>Hello</strong> modülü yok.</p>
+
+<p><img src="img/lk-msr/019.png" alt="_config.yml" /></p>
+
+<p><strong>dmesg</strong> komutu ile kernel üzerindeki mesajları tekrardan gözlemliyoruz. Modül kaldırma sırasında da <strong>Hello.c</strong> için <strong>_exit hello_end(void)</strong> çalışma durumunda <strong>destructor(yıkıcı)</strong> özelliği gösterip içindeki mesajları veya operasyonları gerçekleştirmesini bekliyoruz. Kernel mesajlarında gördüğümüz üzere <strong>“Goodbye Mr.”</strong> Mesajı bize modül kaldırma işleminin başarılı bir şekilde yapıldığını gösteriyor.</p>
+
+<p><img src="img/lk-msr/020.png" alt="_config.yml" /></p>
+
+<blockquote>
+<p>Kernel e modul ekleme ve kaldırma işlemlerini başarı ile tamamladık. İnternette daha farklı örnek modulleri kurmaya çalışarak kendimizi daha geliştirebiliriz.</p>
+</blockquote>
+
+<h3 id="kaynak-kodlar">Kaynak Kodlar</h3>
+
+<h4 id="hello-c">Hello.c</h4>
+
+<pre><code class="language-C">/**
+* @file hello.c
+* @author Akshat Sinha
+* @date 10 Sept 2016
+* @version 0.1
+* @brief An introductory &quot;Hello World!&quot; loadable kernel
+* module (LKM) that can display a message in the /var/log/kern.log
+* file when the module is loaded and removed. The module can accept
+* an argument when it is loaded -- the name, which appears in the
+* kernel log files.
+*/
+#include &lt;linux/module.h&gt;	 /* Needed by all modules */
+#include &lt;linux/kernel.h&gt;	 /* Needed for KERN_INFO */
+#include &lt;linux/init.h&gt;	 /* Needed for the macros */
+
+///&lt; The license type -- this affects runtime behavior
+MODULE_LICENSE(&quot;GPL&quot;);
+
+///&lt; The author -- visible when you use modinfo
+MODULE_AUTHOR(&quot;Akshat Sinha&quot;);
+
+///&lt; The description -- see modinfo
+MODULE_DESCRIPTION(&quot;A simple Hello world LKM!&quot;);
+
+///&lt; The version of the module
+MODULE_VERSION(&quot;0.1&quot;);
+
+static int __init hello_start(void)
+{
+	printk(KERN_INFO &quot;Loading hello module...\n&quot;);
+	printk(KERN_INFO &quot;Hello world\n&quot;);
+	return 0;
+}
+
+static void __exit hello_end(void)
+{
+	printk(KERN_INFO &quot;Goodbye Mr.\n&quot;);
+}
+
+module_init(hello_start);
+module_exit(hello_end);
+</code></pre>
+
+<h4 id="makefile">Makefile</h4>
+
+<blockquote>
+<p>Modul kurulum esnasında hata almamak kendiniz oluşturup içini yine kendiniz doludurunuz.
+&gt;<strong>Enter</strong> yerine <strong>alt yön (↓)</strong> ,
+&gt;<strong>Çoklu boşluk</strong> yerine <strong>Tab</strong></p>
+</blockquote>
+
+<pre><code class="language-t">obj−m += Hello.o
+all:
+    make −C /lib/modules/$(shell uname −r)/build M=$(PWD) modules
+clean:
+    make −C /lib/modules/$(shell uname −r)/build M=$(PWD) clean
+</code></pre>
+
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
